@@ -1,3 +1,6 @@
+import React from "react";
+import ReactDOM from "react-dom";
+
 // const reactheading = React.createElement(
 //   "h1",
 //   { id: "test" },
@@ -17,13 +20,50 @@
 </div> */
 }
 
-const heading = React.createElement(
-  "div",
-  { id: "parent" },
-  React.createElement("div", { id: "child" }, [
-    React.createElement("h1", {}, "Hello I am first child"),
-    React.createElement("h1", {}, "Hello I am second child"),
-  ])
+// const heading = React.createElement(
+//   "div",
+//   { id: "parent" },
+//   React.createElement("div", { id: "child" }, [
+//     React.createElement("h1", {}, "Hello I am first child"),
+//     React.createElement("h1", {}, "Hello I am second child"),
+//   ])
+// );
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+// root.render(heading);
+
+// const jsxHeading = <h1> this is jsx heading </h1>;
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+// root.render(jsxHeading);
+
+// functional component
+const component1 = () => {
+  return <h1>Hello from COMPONENT 1 </h1>;
+};
+
+const component2 = () => <h1>Hello from COMPONENT 2 </h1>;
+
+//jsx can be nested also
+const HeadingComponent = () => (
+  <div id="container">
+    <h1>Hello from COMPONENT 1 </h1>;
+  </div>
 );
+
+// react element - if we remove arrow functiona size then it is a react component
+const component4 = (
+  <div id="container">
+    <h1>Hello from COMPONENT 1 </h1>;
+  </div>
+);
+
+const title = <h1> Namaste React</h1>;
+
+const MainHeading = () => (
+  <div>
+    {title}
+    <h1>hiiiii</h1>
+  </div>
+);
+//<Title />
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(heading);
+root.render(<MainHeading />);
