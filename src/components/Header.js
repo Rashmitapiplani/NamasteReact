@@ -4,8 +4,8 @@ import { useSelector, useDispatch } from "react-redux";
 
 console.log("outside");
 const HeaderComponent = () => {
-  const cart = useSelector((state) => state.cart.items); // Reading cart items from the state
-  console.log("inside");
+  const cartItems = useSelector((state) => state.cart.items); // Reading cart items from the state
+  console.log(cartItems);
 
   const onlineStatus = useOnlineStatus();
   console.log("render again");
@@ -26,7 +26,7 @@ const HeaderComponent = () => {
           </Link>
           <li className="text-lg"> Whishlist</li>
           <Link to="/cart" className="text-lg">
-            Cart {cart.length}
+            Cart {cartItems.length}
           </Link>
           <li>{onlineStatus ? "✅ " : "❌"}</li>
         </ul>

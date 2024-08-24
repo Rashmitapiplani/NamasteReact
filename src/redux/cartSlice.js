@@ -2,13 +2,13 @@ import { createSlice } from "@reduxjs/toolkit";
 import { emit } from "dom/lib/event";
 
 const cartSlice = createSlice({
-  name: "cart",
+  name: "cart1",
   initialState: {
     items: ["test1", "test2", "test3", "test4"],
   },
   reducers: {
     addToCart: (state, action) => {
-      items.push(action.payload);
+      state.items.push(action.payload);
     },
   },
 });
